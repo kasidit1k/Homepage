@@ -42,7 +42,17 @@ nav .container img {
   width: 120px;
 }
 
+.link {
+  display: flex;
+  gap: 40px;
+}
+
+.link li{
+  list-style: none;
+}
+
 .nav-link a {
+  position: relative;
   font-family: var(--font-family);
   font-size: 0.9rem;
   font-weight: 600px;
@@ -50,10 +60,31 @@ nav .container img {
   text-decoration: none;
   margin: 0 15px;
   transform: 0.2s linear; /* transition จะใส่ไว้ในคุณสมบัติ hover */
+  letter-spacing: 0.5px;
+  padding: 0 10px;
 }
 
-.nav-link a:hover {
+/* .nav-link a:hover {
   font-weight: bold;
+} */
+
+a:after{
+  content: "";
+  position: absolute;
+  background-color: #45091c;
+  height: 3px;
+  width: 0;
+  left: 0;
+  bottom: -10px;
+  transition: .3s;
+}
+
+a:hover:after{
+  width: 100%;
+}
+
+a.active::after{
+  width: 100%;
 }
 
 .search {
@@ -151,7 +182,7 @@ nav .container img {
   color: #2a2a2a;
 }
 
-.shopping i{
+.shopping i {
   filter: drop-shadow(1px 1px 4px hsl(239, 72%, 75%));
   text-shadow: 0 0 80px rgba(255, 255, 255, 0.5);
   background: url("https://codetheworld.io/wp-content/uploads/2023/11/rNPwjWM-animated-text-fill.png")
@@ -193,7 +224,7 @@ nav .container img {
   margin-left: auto;
 }
 
-.scroll{
+.scroll {
   margin-top: 27rem;
   margin-left: 5rem;
   width: 18px;
@@ -201,9 +232,7 @@ nav .container img {
   flex-shrink: 0;
 }
 
-.scroll svg{
+.scroll svg {
   width: 30px;
   height: 32px;
 }
-
-
